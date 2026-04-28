@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: campus-issue-hub
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app

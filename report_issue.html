@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Report Issue</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="chatbot.css">
+</head>
+<body class="dashboard-body">
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+<div class="dashboard-shell">
+    <aside class="dashboard-sidebar">
+        <h1>Campus Issue Hub</h1>
+        <p id="portalRole">Issue reporting</p>
+        <div class="dashboard-nav">
+            <a id="dashboardLink" href="student_dashboard.html">My dashboard</a>
+            <a href="report_issue.html" class="active">Report an issue</a>
+            <a href="tracking.html">Live tracking</a>
+            <button type="button" onclick="logoutUser()">Logout</button>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <div class="dashboard-topbar">
+            <div>
+                <h2>Report a campus issue</h2>
+                <p>Submit the problem here, then follow its journey on the separate live tracking page.</p>
+            </div>
+            <span class="pill live-chip"><span class="live-dot"></span><span>Live tracking ready</span></span>
+        </div>
+
+        <section class="panel">
+            <div class="panel-header">
+                <div>
+                    <h3>Create a new ticket</h3>
+                    <p>Useful for hostel, classroom, lab, network, electrical, or maintenance concerns.</p>
+                </div>
+            </div>
+            <form id="issueForm">
+                <div class="form-grid">
+                    <div class="field-group"><label>Name</label><input type="text" id="name" readonly></div>
+                    <div class="field-group"><label>Email</label><input type="email" id="email" readonly></div>
+                    <div class="field-group"><label>Category</label><select id="category"><option value="">Select category</option><option>Electric</option><option>Water</option><option>Network</option><option>Classroom</option><option>Hostel</option><option>Sanitation</option><option>Security</option><option>Other</option></select></div>
+                    <div class="field-group"><label>Priority</label><input type="text" value="Assigned by admin after review and score calculation" readonly></div>
+                </div>
+                <div class="field-group"><label>Location</label><input type="text" id="location" placeholder="Example: Block A - Room 204"></div>
+                <div class="field-group"><label>Description</label><textarea id="description" placeholder="Explain what happened, when it started, and any immediate impact."></textarea></div>
+                <div class="field-group"><label>Photo (Optional)</label><input type="file" id="issuePhoto" accept="image/*"></div>
+                <div class="action-row">
+                    <button type="submit" class="primary-btn">Submit issue</button>
+                    <a class="secondary-btn" href="tracking.html">Go to live tracking</a>
+                    <a id="backToDashboard" class="ghost-btn" href="student_dashboard.html">Back to dashboard</a>
+                </div>
+                <p id="formMessage" class="helper-text">Your ticket will appear immediately in your dashboard. Admin will then assign department and priority score, and a receipt email will be logged.</p>
+            </form>
+        </section>
+    </main>
+</div>
+
+<script src="app.js"></script>
+<script src="email.js"></script>
+<script src="chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus Issue Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+<header class="navbar">
+    <div class="brand">
+        <img src="logo.svg" alt="Campus Issue Hub logo" class="brand-logo">
+        <div class="brand-copy">
+            <strong>Campus Issue Prioritization and Management</strong>
+        </div>
+    </div>
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-shell">
+        <div class="hero-copy">
+            <p class="tagline">Your Voice, Our Action</p>
+            <h1>Campus issue support with faster reporting, smarter routing, and live tracking.</h1>
+            <div class="hero-actions">
+                <a class="primary-link" href="user.html">Open User Portal</a>
+                <a class="secondary-link" href="admin_login.html">Open Admin Portal</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <strong>Live</strong>
+                    <span>Status tracking page</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>3-Factor</strong>
+                    <span>Priority scoring model</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Department</strong>
+                    <span>Assignment and resolution flow</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-panel">
+            <div class="mini-panel">
+                <span class="mini-label">Complaint workflow</span>
+                <h3>From report to resolution</h3>
+                <div class="mini-steps">
+                    <span>Issue reported</span>
+                    <span>Admin review</span>
+                    <span>Department action</span>
+                    <span>Resolved</span>
+                </div>
+            </div>
+            <div class="mini-panel mini-panel-accent">
+                <span class="mini-label">Smart operations</span>
+                <p>Users report issues after login, admins assign priority with weighted factors, and department view tracks active queues in real time.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cards">
+    <div class="card">
+        <div class="card-header">
+            <span class="icon" aria-hidden="true">&#127891;</span>
+            <h3>User Portal</h3>
+        </div>
+        <button onclick="location.href='user.html'">Enter</button>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="icon" aria-hidden="true">&#128295;</span>
+            <h3>Admin Portal</h3>
+        </div>
+        <button onclick="location.href='admin_login.html'">Login</button>
+    </div>
+</section>
+
+<section class="home-section">
+    <div class="section-heading">
+        <p class="section-kicker">Services</p>
+        <h2>Core services on the home page</h2>
+    </div>
+    <div class="feature-grid">
+        <article class="feature-card">
+            <span class="feature-chip" aria-hidden="true">&#128221;</span>
+            <h3>Issue reporting</h3>
+            <p>Report campus problems like infrastructure, labs, or internet issues easily.</p>
+        </article>
+        <article class="feature-card">
+            <span class="feature-chip" aria-hidden="true">&#128200;</span>
+            <h3>Real-Time Tracking</h3>
+            <p>Track your complaints from submission to resolution with status updates.</p>
+        </article>
+        <article class="feature-card">
+            <span class="feature-chip" aria-hidden="true">&#9889;</span>
+            <h3>Smart prioritization</h3>
+            <p>Critical issues are handled first based on urgency and category.</p>
+        </article>
+        <article class="feature-card">
+            <span class="feature-chip" aria-hidden="true">&#128276;</span>
+            <h3>Notifications</h3>
+            <p>Get updates when your issue status changes or gets resolved.</p>
+        </article>
+    </div>
+</section>
+
+<section class="home-section">
+    <div class="section-heading">
+        <p class="section-kicker">How It Works</p>
+        <h2>A cleaner complaint-management journey</h2>
+    </div>
+    <div class="flow-grid">
+        <article class="flow-card">
+            <span class="flow-icon" aria-hidden="true">&#128100;</span>
+            <h3>Login and report</h3>
+            <p>Users sign in, submit an issue, attach a photo if needed, and receive a generated issue ID immediately.</p>
+        </article>
+        <article class="flow-card">
+            <span class="flow-icon" aria-hidden="true">&#128736;</span>
+            <h3>Admin review</h3>
+            <p>Admins assign departments, score urgency, severity, and impact, and the system promotes higher-priority work first.</p>
+        </article>
+        <article class="flow-card">
+            <span class="flow-icon" aria-hidden="true">&#127970;</span>
+            <h3>Department tracking</h3>
+            <p>The department view inside admin shows the queue as live progress cards connected directly to user-reported tickets.</p>
+        </article>
+        <article class="flow-card">
+            <span class="flow-icon" aria-hidden="true">&#9989;</span>
+            <h3>Resolution updates</h3>
+            <p>Users can open Live Tracking anytime to follow progress from New to In Progress to Resolved.</p>
+        </article>
+    </div>
+</section>
+
+<section class="home-section">
+    <div class="section-heading">
+        <p class="section-kicker">FAQs</p>
+        <h2>Questions users usually ask first</h2>
+    </div>
+    <div class="faq-list">
+        <details class="faq-card faq-item">
+            <summary>How do I raise a complaint quickly?</summary>
+            <p>Open the User Portal, sign in as a student or staff member, and submit the issue form with the problem details, location, and optional photo.</p>
+        </details>
+        <details class="faq-card faq-item">
+            <summary>How will I know my complaint was submitted?</summary>
+            <p>As soon as you report an issue, the system creates a unique issue ID so you can recognize and track it later.</p>
+        </details>
+        <details class="faq-card faq-item">
+            <summary>Where can I check the current status?</summary>
+            <p>After login, open the Live Tracking page to see whether your issue is New, In Progress, or Resolved along with department assignment.</p>
+        </details>
+        <details class="faq-card faq-item">
+            <summary>Can I add a photo when the issue needs proof?</summary>
+            <p>Yes. The reporting page allows an optional photo upload, which is useful for damaged infrastructure, hostel problems, and maintenance issues.</p>
+        </details>
+        <details class="faq-card faq-item">
+            <summary>What happens after I submit the complaint?</summary>
+            <p>The admin reviews the complaint, assigns priority, routes it to the correct department, and updates the status as the work progresses.</p>
+        </details>
+        <details class="faq-card faq-item">
+            <summary>Which complaints should I report here?</summary>
+            <p>You can use this portal for infrastructure, electrical, civil, hostel, lab, classroom, internet, and similar campus support issues.</p>
+        </details>
+    </div>
+</section>
+
+<script src="app.js"></script>
+<script>
+const landingSession = CampusApp.getSession();
+if (landingSession) {
+    if (landingSession.role === "student" || landingSession.role === "staff") {
+        window.location.href = CampusApp.getDashboardPath(landingSession.role);
+    } else if (landingSession.role === "admin") {
+        window.location.href = "admin_dashboard.html";
+    }
+}
+</script>
+<script src="chatbot.js"></script>
+</body>
+</html>

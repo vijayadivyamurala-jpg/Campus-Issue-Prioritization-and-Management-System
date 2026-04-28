@@ -1,0 +1,10 @@
+Create a `.env` file in the project root with:
+
+SMTP_HOST=smtp.example.com
+SMTP_PORT=587
+SMTP_USERNAME=your_username
+SMTP_PASSWORD=your_password
+SMTP_FROM=no-reply@example.com
+SMTP_USE_TLS=true
+SMTP_USE_SSL=false
+SUPPORT_EMAIL=support@cvr.ac.in

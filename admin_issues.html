@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Issue Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="chatbot.css">
+</head>
+<body class="dashboard-body">
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+<div class="dashboard-shell">
+    <aside class="dashboard-sidebar">
+        <h1>Campus Issue Hub</h1>
+        <p>Admin control center</p>
+        <div class="dashboard-nav">
+            <a href="admin_dashboard.html">Dashboard</a>
+            <a href="admin_issues.html" class="active">Issue management</a>
+            <a href="department_dashboard.html">Department view</a>
+            <button type="button" onclick="logoutAdmin()">Logout</button>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <div class="dashboard-topbar">
+            <div>
+                <h2>Issue management board</h2>
+                <p>Move issues from new to in progress to resolved with live updates.</p>
+            </div>
+            <span class="pill live-chip"><span class="live-dot"></span><span id="adminSync">Live tracking enabled</span></span>
+        </div>
+
+        <section class="panel">
+            <div class="panel-header">
+                <div>
+                    <h3>Issue management by stage</h3>
+                    <p>Every change is saved in the database, reflected across the dashboards, and tracked in history.</p>
+                </div>
+                <a href="admin_dashboard.html" class="ghost-btn">Back to dashboard</a>
+            </div>
+            <div class="search-toolbar">
+                <div class="search-field">
+                    <label for="adminIssueSearch">Search by issue ID</label>
+                    <input
+                        type="search"
+                        id="adminIssueSearch"
+                        placeholder="Type an issue ID like ISSUE-40049162"
+                        oninput="refreshAdminView()"
+                    >
+                </div>
+                <div class="search-field">
+                    <label for="adminDepartmentFilter">Filter by</label>
+                    <select id="adminDepartmentFilter" onchange="refreshAdminView()">
+                        <option value="">All departments</option>
+                        <option value="Electrical Maintenance">Electrical Maintenance</option>
+                        <option value="Civil Maintenance">Civil Maintenance</option>
+                        <option value="IT Support">IT Support</option>
+                        <option value="Academic Facilities">Academic Facilities</option>
+                        <option value="Hostel Administration">Hostel Administration</option>
+                        <option value="Housekeeping">Housekeeping</option>
+                        <option value="Campus Security">Campus Security</option>
+                        <option value="General Administration">General Administration</option>
+                        <option value="__unassigned__">Unassigned</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="status-columns issue-board-columns">
+                <section class="status-panel status-panel-new clickable-panel" onclick="openIssueStagePage('new')">
+                    <div class="status-panel-head">
+                        <h4>New</h4>
+                        <span class="status-badge status-new">Needs review</span>
+                    </div>
+                    <div class="issue-card-list" id="adminNewIssuesList"></div>
+                </section>
+
+                <section class="status-panel status-panel-progress clickable-panel" onclick="openIssueStagePage('progress')">
+                    <div class="status-panel-head">
+                        <h4>In Progress</h4>
+                        <span class="status-badge status-progress">Active work</span>
+                    </div>
+                    <div class="issue-card-list" id="adminProgressIssuesList"></div>
+                </section>
+
+                <section class="status-panel status-panel-resolved clickable-panel" onclick="openIssueStagePage('resolved')">
+                    <div class="status-panel-head">
+                        <h4>Resolved</h4>
+                        <span class="status-badge status-resolved">Completed</span>
+                    </div>
+                    <div class="issue-card-list" id="adminResolvedIssuesList"></div>
+                </section>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-header">
+                <div>
+                    <h3>Email log</h3>
+                    <p>Receipt and status notification records created for reported issues.</p>
+                </div>
+                <a href="email_log.html" class="ghost-btn">View more</a>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Issue</th>
+                            <th>To</th>
+                            <th>Subject</th>
+                            <th>Status</th>
+                            <th>Created at</th>
+                        </tr>
+                    </thead>
+                    <tbody id="emailLogBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="app.js"></script>
+<script src="admin.js"></script>
+<script src="chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Outfit',sans-serif;
+    background:#030712;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Dot grid background */
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image:radial-gradient(rgba(255, 255, 255, 0.201) 1px, transparent 1px);
+    background-size:24px 24px;
+    z-index:-2;
+}
+
+/* Glow blobs */
+.blob{
+    position:absolute;
+    width:300px;
+    height:300px;
+    filter:blur(120px);
+    opacity:0.5;
+    animation:float 10s ease-in-out infinite;
+    z-index:-1;
+}
+
+.blob1{
+    background:#6366f1;
+    top:10%;
+    left:10%;
+}
+
+.blob2{
+    background:#06b6d4;
+    bottom:10%;
+    right:10%;
+    animation-delay:3s;
+}
+
+
+/* NAVBAR */
+.navbar{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    padding:20px 40px;
+}
+
+.navbar a{
+    position:relative;
+    margin-left:20px;
+    color:#d9dfea;
+    text-decoration:none;
+}
+
+.navbar a::after{
+    content:"";
+    position:absolute;
+    bottom:-3px;
+    left:0;
+    width:0;
+    height:2px;
+    background:#0ea5e9;
+    transition:0.3s;
+}
+
+.navbar a:hover::after{width:100%;}
+.navbar a:hover{color:#0ea5e9;}
+
+/* SECTION */
+/* outer section full width */
+.services{
+    max-width:1200px;
+    margin:80px auto; /* 🔥 centers horizontally */
+    text-align:center;
+    margin-top: 50px;
+}
+/* inner container */
+.services-container{
+    width:100%;
+    max-width:1200px; /* controls centering */
+    text-align:center;
+    margin-top:80px;
+}
+
+/* cards */
+.service-cards{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.card{
+    width:260px;
+    padding:35px;
+    
+    /* Glass + light theme */
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(12px);
+    
+    border-radius:15px;
+    border:1px solid rgba(0,0,0,0.05);
+    
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 12px 25px rgba(14,165,233,0.25);
+}
+
+
+
+.back-home:hover{
+    color:#0ea5e9;
+}
+
+.services h1{
+    margin-bottom:30px;
+    text-align: center;
+}
+
+.subtitle{
+    margin-top:5px;
+    margin-bottom:20px; /* IMPORTANT spacing */
+    color:#64748b;
+    text-align: center;
+}
+
+.card h3{
+    color:#1e293b;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#475569;
+}
+
+.navbar a.active::after{
+    width:100%;
+}
+
+.navbar a.active{
+    color:#0ea5e9;
+}

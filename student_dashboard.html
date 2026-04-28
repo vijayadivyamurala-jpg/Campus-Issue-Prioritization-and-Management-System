@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="chatbot.css">
+</head>
+<body class="dashboard-body">
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+<div class="dashboard-shell">
+    <aside class="dashboard-sidebar">
+        <h1>Campus Issue Hub</h1>
+        <p id="roleLabel">Student portal</p>
+        <div class="dashboard-nav">
+            <a href="student_dashboard.html" class="active">My dashboard</a>
+            <a href="report_issue.html">Report an issue</a>
+            <a href="tracking.html">Live tracking</a>
+            <button type="button" onclick="logoutUser()">Logout</button>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <div class="dashboard-topbar">
+            <div>
+                <h2 id="welcomeLine">Welcome back.</h2>
+                <p><span class="welcome-highlight" id="userName"></span> <span id="userMeta"></span></p>
+            </div>
+            <div class="action-row">
+                <a class="primary-btn" href="report_issue.html">Report issue</a>
+                <a class="ghost-btn" href="tracking.html">Open live tracking</a>
+            </div>
+        </div>
+
+        <section class="metric-grid">
+            <article class="metric-card">
+                <span>Total issues</span>
+                <strong id="totalIssues">0</strong>
+            </article>
+            <article class="metric-card">
+                <span>New</span>
+                <strong id="newIssues">0</strong>
+            </article>
+            <article class="metric-card">
+                <span>In progress</span>
+                <strong id="activeIssues">0</strong>
+            </article>
+            <article class="metric-card">
+                <span>Resolved</span>
+                <strong id="resolvedIssues">0</strong>
+            </article>
+        </section>
+
+        <section class="panel">
+            <div class="panel-header">
+                <div>
+                    <h3>Issue summary</h3>
+                    <p>See a compact overview here, then open the live tracking page for the full progress view.</p>
+                </div>
+                <span class="pill live-chip"><span class="live-dot"></span><span id="lastSync">Live tracking enabled</span></span>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Category</th>
+                            <th>Location</th>
+                            <th>Priority</th>
+                            <th>Status</th>
+                            <th>Tracking</th>
+                            <th>Last update</th>
+                        </tr>
+                    </thead>
+                    <tbody id="issuesTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="app.js"></script>
+<script src="dashboard.js"></script>
+<script src="chatbot.js"></script>
+</body>
+</html>

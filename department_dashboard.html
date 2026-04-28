@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Department View</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="chatbot.css">
+</head>
+<body class="dashboard-body">
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+<div class="dashboard-shell">
+    <aside class="dashboard-sidebar">
+        <h1>Campus Issue Hub</h1>
+        <p id="departmentSidebarText">Admin department operations</p>
+        <div class="dashboard-nav">
+            <a id="deptHomeLink" href="admin_dashboard.html">Admin dashboard</a>
+            <a href="department_dashboard.html" class="active">Department view</a>
+            <a href="admin_issues.html">Issue management</a>
+            <button type="button" onclick="logoutAdmin()">Logout</button>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <div class="dashboard-topbar">
+            <div>
+                <h2>Department live view</h2>
+                <p>Track user-reported issues department-wise, watch status progress live, and move work from new to resolved.</p>
+            </div>
+            <span class="pill live-chip"><span class="live-dot"></span><span id="departmentSync">Live department tracking</span></span>
+        </div>
+
+        <section class="panel">
+            <div class="panel-header">
+                <div>
+                    <h3>Department queue</h3>
+                    <p>This view is connected to issues created by logged-in students and staff. Filter a department to watch its real-time workload.</p>
+                </div>
+            </div>
+            <div class="action-row">
+                <div class="factor-group">
+                    <label for="departmentFilter">Department</label>
+                    <select class="department-select" id="departmentFilter" onchange="refreshDepartmentDashboard()">
+                        <option>Electrical Maintenance</option>
+                        <option>Civil Maintenance</option>
+                        <option>IT Support</option>
+                        <option>Academic Facilities</option>
+                        <option>Hostel Administration</option>
+                        <option>Housekeeping</option>
+                        <option>Campus Security</option>
+                        <option>General Administration</option>
+                    </select>
+                </div>
+                <div class="search-field search-field-wide">
+                    <label for="departmentIssueSearch">Search by issue ID</label>
+                    <input
+                        type="search"
+                        id="departmentIssueSearch"
+                        placeholder="Find an assigned issue by ID"
+                        oninput="refreshDepartmentDashboard()"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <section class="metric-grid">
+            <article class="metric-card">
+                <span>Total assigned</span>
+                <strong id="deptTotal">0</strong>
+            </article>
+            <article class="metric-card">
+                <span>New</span>
+                <strong id="deptNew">0</strong>
+            </article>
+            <article class="metric-card">
+                <span>In progress</span>
+                <strong id="deptProgress">0</strong>
+            </article>
+            <article class="metric-card">
+                <span>Resolved</span>
+                <strong id="deptResolved">0</strong>
+            </article>
+        </section>
+
+        <section class="panel">
+            <div class="panel-header">
+                <div>
+                    <h3>Department live tracking</h3>
+                    <p>Higher-priority tickets rise first. Each card reflects the same issue status users see on their tracking page.</p>
+                </div>
+            </div>
+            <div class="tracking-grid" id="departmentIssuesList">
+                <section class="panel">
+                    <div class="empty-state">Loading department issues...</div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="app.js"></script>
+<script src="department.js"></script>
+<script src="chatbot.js"></script>
+</body>
+</html>
